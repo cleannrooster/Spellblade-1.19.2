@@ -1,0 +1,31 @@
+{
+	"parent": "item/handheld",
+	"credit": "Made with Blockbench",
+	"gui_light": "front",
+	"textures": {
+		"layer0": "spellblademod:item/claymore_3",
+		"particle": "spellblademod:item/claymore_3"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-0, -90, 55],
+			"translation": [0, 6.56, 1.64],
+			"scale": [1.4, 1.4, 1.4]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [0, 90, -45],
+			"translation": [0, 6.56, 1.64],
+			"scale": [1.4, 1.4, 1.4]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -90, 25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [1.4, 1.4, 1.4]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 90, -25],
+			"translation": [1.13, 3.2, 1.13],
+			"scale": [1.4, 1.4, 1.4]
+		}
+	}
+}

@@ -1,0 +1,63 @@
+{
+    "credit": "Made with Blockbench",
+    "textures": {
+        "2": "spellblademod:item/shield_base_nopattern",
+        "particle": "spellblademod:item/shield_base_nopattern"
+    },
+    "elements": [
+        {
+            "from": [-6, -11, 1],
+            "to": [6, 11, 2],
+            "faces": {
+                "north": {"uv": [3.5, 0.25, 6.5, 5.75], "texture": "#2"},
+                "east": {"uv": [3.25, 0.25, 3.5, 5.75], "texture": "#2"},
+                "south": {"uv": [0.25, 0.25, 3.25, 5.75], "texture": "#2"},
+                "west": {"uv": [0, 0.25, 0.25, 5.75], "texture": "#2"},
+                "up": {"uv": [0.25, 0, 3.25, 0.25], "texture": "#2"},
+                "down": {"uv": [3.25, 0, 6.25, 0.25], "texture": "#2"}
+            }
+        }
+    ],
+    "overrides": [
+        {
+            "predicate": {
+                "blocking": 1
+            },
+            "model": "item/shield_blocking"
+        }
+    ],
+    "display": {
+        "thirdperson_righthand": {
+            "rotation": [53, 135, 0],
+            "translation": [1, 20, -1.75]
+        },
+        "thirdperson_lefthand": {
+            "rotation": [53, 135, 0],
+            "translation": [13, 11, 4.75]
+        },
+        "firstperson_righthand": {
+            "rotation": [0, 180, 5],
+            "translation": [-10, 2, -10],
+            "scale": [1.25, 1.25, 1.25]
+        },
+        "firstperson_lefthand": {
+            "rotation": [0, 180, 5],
+            "translation": [10, 0, -10],
+            "scale": [1.25, 1.25, 1.25]
+        },
+        "ground": {
+            "translation": [4, 4, 2],
+            "scale": [0.25, 0.25, 0.25]
+        },
+        "gui": {
+            "rotation": [15, -25, -5],
+            "translation": [2, 3, 0],
+            "scale": [0.65, 0.65, 0.65]
+        },
+        "fixed": {
+            "rotation": [0, 180, 0],
+            "translation": [-2, 4, -5],
+            "scale": [0.5, 0.5, 0.5]
+        }
+    }
+}

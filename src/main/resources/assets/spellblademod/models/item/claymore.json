@@ -1,0 +1,37 @@
+{
+  "parent": "item/handheld",
+  "credit": "Made with Blockbench",
+  "textures": {
+    "layer0": "spellblademod:item/claymore"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [-0, -90, 55],
+      "translation": [0, 6.56, 1.64],
+      "scale": [1.4, 1.4, 1.4]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [0, 90, -45],
+      "translation": [0, 6.56, 1.64],
+      "scale": [1.4, 1.4, 1.4]
+    },
+    "firstperson_righthand": {
+      "rotation": [0, -90, 25],
+      "translation": [1.13, 3.2, 1.13],
+      "scale": [1.4, 1.4, 1.4]
+    },
+    "firstperson_lefthand": {
+      "rotation": [0, 90, -25],
+      "translation": [1.13, 3.2, 1.13],
+      "scale": [1.4, 1.4, 1.4]
+    }
+  },
+  "overrides": [
+    { "predicate":  { "custom_model_data": 1 }, "model": "spellblademod:item/claymore_1"},
+    { "predicate":  { "custom_model_data": 2 }, "model": "spellblademod:item/claymore_2"},
+    { "predicate":  { "custom_model_data": 3 }, "model": "spellblademod:item/claymore_3"},
+    { "predicate":  { "custom_model_data": 4 }, "model": "spellblademod:item/claymore_4"},
+    { "predicate":  { "custom_model_data": 5 }, "model": "item/air"}
+
+  ]
+}

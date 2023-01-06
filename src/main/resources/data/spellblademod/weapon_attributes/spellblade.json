@@ -1,0 +1,43 @@
+{
+  "attributes": {
+    "attack_range": 3.0,
+    "category": "sword",
+    "two_handed": true,
+
+    "pose": "spellblademod:spellblade_idle",
+
+    "attacks": [
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 1,
+        "angle": 120,
+        "upswing": 0.5,
+        "animation": "spellblademod:one_handed_slash_horizontal_right_floating",
+        "swing_sound": {
+          "id": "bettercombat:sword_slash"
+        }
+      },
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 1,
+        "angle": 120,
+        "upswing": 0.5,
+        "animation": "spellblademod:one_handed_slash_horizontal_left_floating",
+        "swing_sound": {
+          "id": "bettercombat:sword_slash"
+        }
+      },
+      {
+        "hitbox": "FORWARD_BOX",
+        "damage_multiplier": 1,
+        "angle": 0,
+        "upswing": 0.5,
+        "animation": "spellblademod:one_handed_stab_floating",
+        "swing_sound": {
+          "id": "bettercombat:sword_slash",
+          "pitch": 1.2
+        }
+      }
+    ]
+  }
+}
