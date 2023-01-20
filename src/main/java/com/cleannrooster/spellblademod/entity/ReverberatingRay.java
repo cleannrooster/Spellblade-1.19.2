@@ -55,7 +55,6 @@ public class ReverberatingRay extends AbstractArrow implements ItemSupplier {
 
 
 
-
     @Override
     protected void onHitEntity(EntityHitResult p_37259_) {
 
@@ -124,7 +123,6 @@ public class ReverberatingRay extends AbstractArrow implements ItemSupplier {
             float f1 = -Mth.sin(f7 * ((float) Math.PI / 180F)) * Mth.cos(f * ((float) Math.PI / 180F));
             float f2 = -Mth.sin(f * ((float) Math.PI / 180F));
             float f3 = Mth.cos(f7 * ((float) Math.PI / 180F)) * Mth.cos(f * ((float) Math.PI / 180F));
-
             ReverberatingRay orb1 = new ReverberatingRay(ModEntities.REVERBERATING_RAY_ORB.get(), this.level);
             orb1.setOwner(this.getOwner());
             orb1.secondary = true;
@@ -141,7 +139,6 @@ public class ReverberatingRay extends AbstractArrow implements ItemSupplier {
             }
 
             if (tickCount % 10 == 1) {
-
 
                 SoundEvent soundEvent = SoundEvents.WARDEN_SONIC_BOOM;
                 level.playSound((Player)null, this.getOnPos(), soundEvent, SoundSource.PLAYERS, 1F, 1F);

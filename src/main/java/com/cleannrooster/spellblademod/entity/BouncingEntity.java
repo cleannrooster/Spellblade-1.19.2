@@ -9,6 +9,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractHurtingProjectile;
 import net.minecraft.world.entity.projectile.Fireball;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.ItemStack;
@@ -148,7 +149,6 @@ public class BouncingEntity extends Fireball {
     protected float getGravity() {
         return 0.06F;
     }
-
     @Override
     protected void onHitBlock(BlockHitResult result) {
         if(result.getType() == HitResult.Type.BLOCK && !this.getLevel().isClientSide()) {

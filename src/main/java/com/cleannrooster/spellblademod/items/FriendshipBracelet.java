@@ -62,7 +62,6 @@ public class FriendshipBracelet extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level p_41432_, Player p_41433_, InteractionHand p_41434_) {
         ItemStack itemstack = p_41433_.getItemInHand(p_41434_);
-        if (p_41433_.isShiftKeyDown()) {
             CompoundTag nbt;
             if (itemstack.hasTag())
             {
@@ -83,8 +82,7 @@ public class FriendshipBracelet extends Item {
             }
             return InteractionResultHolder.success(itemstack);
 
-        }
-        return InteractionResultHolder.fail(itemstack);
+
     }
 
     public static boolean PlayerFriendshipPredicate(Player player, LivingEntity livingEntity) {

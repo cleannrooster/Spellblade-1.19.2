@@ -30,7 +30,7 @@ public class Spell extends Item {
         return false;
     }
     public ChatFormatting color(){
-        return ChatFormatting.BLACK;
+        return ChatFormatting.GRAY;
     }
 
     public boolean triggeron(Level level, Player player, LivingEntity target, float modifier){
@@ -43,7 +43,7 @@ public class Spell extends Item {
         return 0;
     }
     public int triggerCooldown(){
-        return 0;
+        return 20;
     }
     public int getColor(){
         return 0;

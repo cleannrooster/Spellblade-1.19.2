@@ -25,6 +25,9 @@
   "key.category.spellblademod": "Spellblade",
 
   "entity.spellblademod.catspark": "Spider-Cat",
+  "item.spellblademod.barrage": "Million Knives",
+  "item.spellblademod.spinning": "Amethyst Gyre",
+
   "item.spellblademod.ender_seeker": "Enderloper's Glove",
   "item.spellblademod.wardlight": "Wardlight",
   "item.spellblademod.wardloop": "Spellweaver's Orb",
@@ -76,7 +79,7 @@
   "block.spellblademod.sentinel_totem_block": "Sentinel Totem Block",
   "block.spellblademod.wardlight": "Wardlight",
   "effect.spellblademod.warding": "Warding",
-  "effect.spellblademod.wardabsorption": "Ethereal Barrier",
+  "effect.spellblademod.wardabsorption": "Warded",
   "effect.spellblademod.shocked": "Shocked",
   "effect.spellblademod.ward_drain": "Ward Drain",
   "effect.spellblademod.totemic_zeal": "Totemic Zeal",

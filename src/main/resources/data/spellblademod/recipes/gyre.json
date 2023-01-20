@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:enchanted_book"
+    },
+    {
+      "tag": "forge:gems/amethyst"
+    },
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "item": "minecraft:quartz"
+    },
+    {
+      "tag": "forge:gems/amethyst"
+    }
+  ],
+  "result":
+  {
+    "item": "spellblademod:spinning"
+  }
+}

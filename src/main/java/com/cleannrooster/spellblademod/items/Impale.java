@@ -5,6 +5,8 @@ import com.cleannrooster.spellblademod.entity.ImpaleEntity;
 import com.cleannrooster.spellblademod.entity.ModEntities;
 import com.cleannrooster.spellblademod.manasystem.manatick;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
@@ -24,6 +26,9 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.lang.Math.sqrt;
 
@@ -82,17 +87,43 @@ public class Impale extends Spell {
             return InteractionResultHolder.success(itemstack);
 
         }
-        BlockHitResult hitResult = getPlayerPOVHitResult(level,player, ClipContext.Fluid.NONE,player.getAttribute(net.minecraftforge.common.ForgeMod.REACH_DISTANCE.get()).getValue());
-        if(hitResult.getType() == HitResult.Type.BLOCK) {
-            ImpaleEntity impale = new ImpaleEntity(ModEntities.IMPALE.get(), level, player, hitResult.getBlockPos(),         (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE));
-            ((Player)player).getAttribute(manatick.WARD).setBaseValue(((Player) player).getAttributeBaseValue(manatick.WARD)-20);
+        List<BlockPos> posList = new ArrayList<>();
+        int iiii = -5;
+        for(int iii = 0; iii < 10; iii++) {
+            for(int ii = 0; ii < 5; ii++) {
+                BlockHitResult hitResult = getPlayerPOVHitResult(level, player, ClipContext.Fluid.NONE, player.getAttribute(net.minecraftforge.common.ForgeMod.REACH_DISTANCE.get()).getValue()*5, ii, iii);
+                if (hitResult.getType() == HitResult.Type.BLOCK) {
+                    if(posList.stream().noneMatch(asdf -> hitResult.getBlockPos().distSqr((Vec3i)asdf) < 4)){
+                        posList.add(hitResult.getBlockPos());
 
-            if (((Player)player).getAttributes().getBaseValue(manatick.WARD) < -21) {
-                player.hurt(DamageSource.MAGIC,2);
+                        ImpaleEntity impale = new ImpaleEntity(ModEntities.IMPALE.get(), level, player, hitResult.getBlockPos(), (float) player.getAttributeValue(Attributes.ATTACK_DAMAGE),iiii);
+
+                    }
+                }
             }
+            iiii++;
+        }
+        ((Player) player).getAttribute(manatick.WARD).setBaseValue(((Player) player).getAttributeBaseValue(manatick.WARD) - 20);
+
+        if (((Player) player).getAttributes().getBaseValue(manatick.WARD) < -21) {
+            player.hurt(DamageSource.MAGIC, 2);
         }
 
         return super.use(level, player, hand);
+    }
+    public static BlockHitResult getPlayerPOVHitResult(Level p_41436_, LivingEntity p_41437_, ClipContext.Fluid p_41438_, double distance, int offset1, int offset2) {
+        float f = (float) Math.max(0,20-10*0.5*sqrt(offset1));
+        float f1 = p_41437_.getYRot()-40+10*offset2;
+        Vec3 vec3 = p_41437_.getEyePosition();
+        float f2 = Mth.cos(-f1 * ((float)Math.PI / 180F) - (float)Math.PI);
+        float f3 = Mth.sin(-f1 * ((float)Math.PI / 180F) - (float)Math.PI);
+        float f4 = -Mth.cos(-f * ((float)Math.PI / 180F));
+        float f5 = Mth.sin(-f * ((float)Math.PI / 180F));
+        float f6 = f3 * f4;
+        float f7 = f2 * f4;
+        double d0 = distance;;
+        Vec3 vec31 = vec3.add((double)f6 * d0, (double)f5 * d0, (double)f7 * d0);
+        return p_41436_.clip(new ClipContext(vec3, vec31, ClipContext.Block.COLLIDER, p_41438_, p_41437_));
     }
     public static BlockHitResult getPlayerPOVHitResult(Level p_41436_, LivingEntity p_41437_, ClipContext.Fluid p_41438_, double distance) {
         float f = p_41437_.getXRot();

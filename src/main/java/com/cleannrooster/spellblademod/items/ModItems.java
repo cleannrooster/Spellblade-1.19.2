@@ -153,8 +153,10 @@ public class ModItems {
             () -> new Ascend(new Item.Properties().tab(ModSetup.ITEM_GROUP).stacksTo(1)));
     public static final RegistryObject<Item> REDSTONEBURST = ITEMS.register("redstoneburst",
             () -> new RedstoneBurst(new Item.Properties().tab(ModSetup.ITEM_GROUP).stacksTo(1)));
-    public static final RegistryObject<Item> BARRAGE = ITEMS.register("amethystbarrage",
+    public static final RegistryObject<Item> BARRAGE = ITEMS.register("barrage",
             () -> new AmethystBarrage(new Item.Properties().tab(ModSetup.ITEM_GROUP).stacksTo(1)));
+    public static final RegistryObject<Item> SPINNING = ITEMS.register("spinning",
+            () -> new SpectralBladeItem(new Item.Properties().tab(ModSetup.ITEM_GROUP).stacksTo(1)));
 
 
 

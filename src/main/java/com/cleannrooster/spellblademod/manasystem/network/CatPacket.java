@@ -1,5 +1,6 @@
-package com.cleannrooster.spellblademod.patreon;
+package com.cleannrooster.spellblademod.manasystem.network;
 
+import com.cleannrooster.spellblademod.patreon.Patreon;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.network.NetworkEvent;

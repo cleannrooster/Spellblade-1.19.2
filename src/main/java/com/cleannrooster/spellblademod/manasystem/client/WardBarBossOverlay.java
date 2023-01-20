@@ -49,7 +49,7 @@ public class WardBarBossOverlay extends BossHealthOverlay {
                 int k = i / 2;
                 RenderSystem.setShaderColor(1.0F, 1.0F, 1.0F, 1.0F);
                 RenderSystem.setShaderTexture(0, new ResourceLocation("spellblademod", "textures/gui/bars.png"));
-                this.drawBar(p_93705_, k, j, (int) Math.round(player.getAttributeValue(manatick.WARD)));
+                this.drawBar(p_93705_, k, j, (int) ClientManaData.getPlayerMana());
                 Component component = Component.translatable(String.valueOf(Math.round(ClientManaData.getPlayerMana())));
                 Component component2 = Component.translatable(String.valueOf(Math.round(ClientManaData.getPlayerBaseMana())));
 

@@ -17,13 +17,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
@@ -44,8 +43,8 @@ public class BladeFlurry extends Spell{
         return 12682647;
     }
 
-    public Item getIngredient1() {return Items.AMETHYST_SHARD;};
-    public Item getIngredient2() {return ModItems.ESSENCEBOLT.get();};
+    public Item getIngredient1() {return ModItems.SPELLBLADE.get();};
+    public Item getIngredient2() {return ModItems.SPINNING.get();};
     public ChatFormatting color(){
         return ChatFormatting.DARK_PURPLE;
     }
@@ -99,7 +98,6 @@ public class BladeFlurry extends Spell{
 
             level.addFreshEntity(swords[i]);
         }
-
         ((Player)player).getAttribute(manatick.WARD).setBaseValue(((Player) player).getAttributeBaseValue(manatick.WARD)-20);
 
         if (((Player)player).getAttributes().getBaseValue(manatick.WARD) < -21) {

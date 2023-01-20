@@ -54,13 +54,14 @@ public class ClientModEvents {
         event.registerEntityRenderer(ModEntities.CATSPARK.get(), CatRenderer::new);
         event.registerEntityRenderer(ModEntities.SPEAR.get(), BattlemageImpalerRenderer::new);
         event.registerEntityRenderer(ModEntities.LIGHTNING.get(), LightningBoltRenderer::new);
+        event.registerEntityRenderer(ModEntities.SHIELD.get(), ShieldRenderer::new);
         event.registerEntityRenderer(ModEntities.BINDPROJ.get(), (p_174081_) -> {
             return new ThrownItemRenderer<>(p_174081_, 1.0F, true);});
         event.registerEntityRenderer(ModEntities.ENDERBIND.get(), (p_174082_) -> {
             return new ThrownItemRenderer<>(p_174082_, 1.0F, true);});
-        event.registerEntityRenderer(ModEntities.SHIELD.get(), (p_174082_) -> {
-            return new ShieldRenderer<>(p_174082_, 1.0F, true);});
         event.registerEntityRenderer(ModEntities.AMETHYST.get(), (p_174082_) -> {
+            return new sword1renderer<>(p_174082_, 1.0F, true);});
+        event.registerEntityRenderer(ModEntities.SPECTRALBLADES.get(), (p_174082_) -> {
             return new sword1renderer<>(p_174082_, 1.0F, true);});
 
 

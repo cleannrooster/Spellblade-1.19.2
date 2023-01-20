@@ -6,7 +6,6 @@ import com.cleannrooster.spellblademod.items.ParticlePacket;
 import com.cleannrooster.spellblademod.items.ParticlePacket2;
 import com.cleannrooster.spellblademod.manasystem.client.ParticleReverb;
 import com.cleannrooster.spellblademod.manasystem.network.*;
-import com.cleannrooster.spellblademod.patreon.CatPacket;
 import com.cleannrooster.spellblademod.patreon.CatsAndDogsPacket;
 import com.cleannrooster.spellblademod.patreon.EmeraldPacket;
 import com.cleannrooster.spellblademod.patreon.RefreshPacket;
@@ -39,69 +38,74 @@ public class Messages {
         net.messageBuilder(ClickSpell.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(ClickSpell::new)
                 .encoder(ClickSpell::toBytes)
-                .consumer(ClickSpell::handle)
+                .consumerMainThread(ClickSpell::handle)
                 .add();
         net.messageBuilder(RetrieveItem.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(RetrieveItem::new)
                 .encoder(RetrieveItem::toBytes)
-                .consumer(RetrieveItem::handle)
+                .consumerMainThread(RetrieveItem::handle)
                 .add();
         net.messageBuilder(EmeraldPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(EmeraldPacket::new)
                 .encoder(EmeraldPacket::toBytes)
-                .consumer(EmeraldPacket::handle)
+                .consumerMainThread(EmeraldPacket::handle)
                 .add();
         net.messageBuilder(RefreshPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(RefreshPacket::new)
                 .encoder(RefreshPacket::toBytes)
-                .consumer(RefreshPacket::handle)
+                .consumerMainThread(RefreshPacket::handle)
                 .add();
         net.messageBuilder(ParticleReverb.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ParticleReverb::new)
                 .encoder(ParticleReverb::toBytes)
-                .consumer(ParticleReverb::handle)
+                .consumerMainThread(ParticleReverb::handle)
                 .add();
         net.messageBuilder(FireworkHandler.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(FireworkHandler::new)
                 .encoder(FireworkHandler::toBytes)
-                .consumer(FireworkHandler::handle)
+                .consumerMainThread(FireworkHandler::handle)
                 .add();
         net.messageBuilder(CatPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(CatPacket::new)
                 .encoder(CatPacket::toBytes)
-                .consumer(CatPacket::handle)
+                .consumerMainThread(CatPacket::handle)
                 .add();
         net.messageBuilder(CatsAndDogsPacket.class, id(), NetworkDirection.PLAY_TO_SERVER)
                 .decoder(CatsAndDogsPacket::new)
                 .encoder(CatsAndDogsPacket::toBytes)
-                .consumer(CatsAndDogsPacket::handle)
+                .consumerMainThread(CatsAndDogsPacket::handle)
                 .add();
         net.messageBuilder(SyncAutouse.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(SyncAutouse::new)
                 .encoder(SyncAutouse::toBytes)
-                .consumer(SyncAutouse::handle)
+                .consumerMainThread(SyncAutouse::handle)
                 .add();
         net.messageBuilder(PacketSyncManaToClient.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(PacketSyncManaToClient::new)
                 .encoder(PacketSyncManaToClient::toBytes)
-                .consumer(PacketSyncManaToClient::handle)
+                .consumerMainThread(PacketSyncManaToClient::handle)
                 .add();
         net.messageBuilder(ParticlePacket.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ParticlePacket::new)
                 .encoder(ParticlePacket::toBytes)
-                .consumer(ParticlePacket::handle)
+                .consumerMainThread(ParticlePacket::handle)
                 .add();
 
 
         net.messageBuilder(ParticlePacket2.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(ParticlePacket2::new)
                 .encoder(ParticlePacket2::toBytes)
-                .consumer(ParticlePacket2::handle)
+                .consumerMainThread(ParticlePacket2::handle)
+                .add();
+        net.messageBuilder(ParticlePacket3.class, id(), NetworkDirection.PLAY_TO_CLIENT)
+                .decoder(ParticlePacket3::new)
+                .encoder(ParticlePacket3::toBytes)
+                .consumerMainThread(ParticlePacket3::handle)
                 .add();
         net.messageBuilder(Hurt.class, id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(Hurt::new)
                 .encoder(Hurt::toBytes)
-                .consumer(Hurt::handle)
+                .consumerMainThread(Hurt::handle)
                 .add();
     }
 

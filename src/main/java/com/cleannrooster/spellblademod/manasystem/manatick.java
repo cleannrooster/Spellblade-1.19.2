@@ -5,11 +5,14 @@ import com.cleannrooster.spellblademod.blocks.WardIronBlock;
 import com.cleannrooster.spellblademod.items.ModItems;
 import com.cleannrooster.spellblademod.items.WardArmorItem;
 import com.cleannrooster.spellblademod.manasystem.data.basemana;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.RangedAttribute;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.LogicalSide;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.Set;
@@ -41,7 +44,11 @@ public class manatick {
         if(event.phase != TickEvent.Phase.START) {
             return;
         }
-        if(event.player.getAttribute(manatick.BASEWARD) != null && event.player.getAttribute(manatick.WARD) != null) {
+        if(event.player.getAttribute(manatick.BASEWARD) != null && event.player.getAttribute(manatick.WARD) != null && !event.player.getLevel().isClientSide()) {
+
+            double ward = event.player.getAttribute(manatick.WARD).getValue();
+            double A = event.player.getAbsorptionAmount();
+
             basemana.baseadditional = basemana.sum();
 
             int wardeff = 0;
@@ -175,12 +182,9 @@ public class manatick {
             }
 
             float baseWard =multiplier2* multiplier*base / (0.025F);
-
-
-            if (!event.player.hasEffect(StatusEffectsModded.WARDLOCKED.get())) {
-                event.player.getAttribute(manatick.WARD).setBaseValue((float) (event.player.getAttribute(manatick.WARD).getValue() + (baseWard - event.player.getAttribute(manatick.WARD).getValue()) * 0.01856026932));
-            }
             event.player.getAttribute(manatick.BASEWARD).setBaseValue(baseWard);
+            double p_22101_ = ward  + ((baseWard - ward) * 0.01856026932);
+            event.player.getAttribute(manatick.WARD).setBaseValue(p_22101_);
 
 
         }

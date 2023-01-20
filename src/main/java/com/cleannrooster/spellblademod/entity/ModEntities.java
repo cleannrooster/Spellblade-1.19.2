@@ -58,6 +58,8 @@ public class ModEntities {
             () -> EntityType.Builder.<ShieldEntity>of(ShieldEntity::new, MobCategory.MISC).sized(0.75F, (float)(1F+0.0625*8F)).clientTrackingRange(100).updateInterval(1).build(new ResourceLocation("spellblademod", "enderbind").toString()));
     public static final RegistryObject<EntityType<AmethystEntity>> AMETHYST = ENTITIES.register("amethyst",
             () -> EntityType.Builder.<AmethystEntity>of(AmethystEntity::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(100).updateInterval(1).build(new ResourceLocation("spellblademod", "enderbind").toString()));
+    public static final RegistryObject<EntityType<SpectralBlades>> SPECTRALBLADES = ENTITIES.register("spectralblades",
+            () -> EntityType.Builder.<SpectralBlades>of(SpectralBlades::new, MobCategory.MISC).sized(1, 1).clientTrackingRange(100).updateInterval(1).build(new ResourceLocation("spellblademod", "enderbind").toString()));
 
 
 }

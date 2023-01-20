@@ -1,6 +1,7 @@
 package com.cleannrooster.spellblademod.patreon;
 
 import com.cleannrooster.spellblademod.SpellbladeMod;
+import com.cleannrooster.spellblademod.manasystem.network.CatPacket;
 import com.cleannrooster.spellblademod.setup.Messages;
 import io.netty.buffer.Unpooled;
 import net.minecraft.client.Minecraft;
@@ -68,13 +69,13 @@ public class PatreonMenu extends Screen {
 
             FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
             buf.writeUUID(Minecraft.getInstance().player.getUUID());
-            Messages.sendToServer(new com.cleannrooster.spellblademod.patreon.CatPacket(buf));
+            Messages.sendToServer(new CatPacket(buf));
         }
         if (string.equals("catsanddogs")) {
 
             FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
             buf.writeUUID(Minecraft.getInstance().player.getUUID());
-            Messages.sendToServer(new com.cleannrooster.spellblademod.patreon.CatsAndDogsPacket(buf));
+            Messages.sendToServer(new CatsAndDogsPacket(buf));
         }
     }
 }

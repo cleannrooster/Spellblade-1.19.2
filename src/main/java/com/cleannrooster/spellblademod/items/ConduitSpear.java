@@ -87,7 +87,6 @@ public class ConduitSpear extends Spellblade{
                     double Vxx = Vxz * player.getLookAngle().x;
                     double Vzz = Vxz * player.getLookAngle().z;
 
-                    System.out.println(spellList);
                     ConduitSpearEntity spear = new ConduitSpearEntity(ModEntities.SPEAR.get(), level, spellList);
                     spear.setPos(p_41414_.getEyePosition());
                     spear.setOwner(p_41414_);

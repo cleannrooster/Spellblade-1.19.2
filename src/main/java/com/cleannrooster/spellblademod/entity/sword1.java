@@ -135,6 +135,8 @@ public class sword1 extends ThrownTrident implements ItemSupplier {
     public void tick() {
         this.xOld = this.getX();
         this.yOld = this.getY();
+        this.zOld = this.getZ();
+
         Entity entity2;
         if (spear != null){
             entity2 = spear;
@@ -142,7 +144,6 @@ public class sword1 extends ThrownTrident implements ItemSupplier {
         else{
             entity2 = this.getOwner();
         }
-        this.zOld = this.getZ();
         if (this.getOwner() != null) {
             if (this.getOwner().isAlive()&& this.getOwner() instanceof Player) {
                 if(this.mode == 3){
@@ -461,6 +462,7 @@ public class sword1 extends ThrownTrident implements ItemSupplier {
 
         }
         this.setPos(d2, d0, d1);
+
 
     }
 

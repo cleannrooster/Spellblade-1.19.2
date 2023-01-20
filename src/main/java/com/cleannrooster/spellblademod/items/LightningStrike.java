@@ -80,7 +80,6 @@ public class LightningStrike extends Spell{
             worldIn.addFreshEntity(lightning);
             List<LivingEntity> targets = worldIn.getEntitiesOfClass(LivingEntity.class,new AABB(hitResult.getBlockPos().getX()-2,hitResult.getBlockPos().getY()-2,hitResult.getBlockPos().getZ()-2,hitResult.getBlockPos().getX()+2,hitResult.getBlockPos().getY()+2,hitResult.getBlockPos().getZ()+2), living -> FriendshipBracelet.PlayerFriendshipPredicate(playerIn,living));
             targets.removeIf(target -> target == playerIn);
-            System.out.println(targets);
             for(LivingEntity target : targets) {
                 AttributeModifier modifier2 = new AttributeModifier(UUID.randomUUID(),"knockbackresist",1, AttributeModifier.Operation.ADDITION);
                 ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();

@@ -114,8 +114,6 @@ public class EnderBind extends Spell{
                 playerIn.hurt(DamageSource.MAGIC, 2);
             }
         }
-        System.out.println(list);
-        System.out.println(list2);
         return super.use(worldIn, playerIn, p_41434_);
     }
     @Override

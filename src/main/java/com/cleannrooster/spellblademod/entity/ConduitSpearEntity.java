@@ -52,7 +52,6 @@ public class ConduitSpearEntity extends ThrownTrident {
             this.setDeltaMovement(this.getDeltaMovement().scale(1/0.99));
         }
         if(this.inGroundTime > 0 && this.inGround && this.getOwner() instanceof Player player && this.inGroundTime % 20 == 5) {
-            System.out.println(this.spells);
             if (this.spells != null) {
                 this.spells.forEach(spellname -> {
                     for (RegistryObject<Item> spell3 : ModItems.ITEMS.getEntries()) {

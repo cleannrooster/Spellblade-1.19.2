@@ -51,6 +51,18 @@ public class sword1renderer<T extends Entity & ItemSupplier> extends EntityRende
                 return;
             }
         }
+        if (!p_116111_.isInvisible() && p_116111_ instanceof SpectralBlades) {
+            if (p_116111_.tickCount >= 2 || !(this.entityRenderDispatcher.camera.getEntity().distanceToSqr(p_116111_) < 12.25D)) {
+                p_116114_.pushPose();
+                p_116114_.mulPose(Vector3f.YP.rotationDegrees(Mth.lerp(p_116113_, p_116111_.yRotO, p_116111_.getYRot()) - 90.0F));
+                p_116114_.mulPose(Vector3f.XP.rotationDegrees(Mth.lerp(p_116113_, p_116111_.xRotO, p_116111_.getXRot()) - 90F));
+                VertexConsumer vertexconsumer = ItemRenderer.getFoilBufferDirect(p_116115_, this.model.renderType(this.getTextureLocation(p_116111_)), false, false);
+                this.itemRenderer.renderStatic(p_116111_.getItem(), ItemTransforms.TransformType.NONE, p_116116_, OverlayTexture.NO_OVERLAY, p_116114_, p_116115_, p_116111_.getId());
+
+                p_116114_.popPose();
+                return;
+            }
+        }
         if (!p_116111_.isInvisible()) {
             if (p_116111_.tickCount >= 2 || !(this.entityRenderDispatcher.camera.getEntity().distanceToSqr(p_116111_) < 12.25D)) {
                 p_116114_.pushPose();

@@ -41,6 +41,11 @@ public class EssenceBolt extends Spell{
         return 13762473;
     }
 
+    @Override
+    public boolean canSpellweave() {
+        return false;
+    }
+
     public Item getIngredient1() {return Items.GLOW_BERRIES;};
     public Item getIngredient2() {return Items.GLASS_BOTTLE;};
 

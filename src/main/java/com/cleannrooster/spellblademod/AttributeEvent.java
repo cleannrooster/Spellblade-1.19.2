@@ -11,7 +11,7 @@ public class AttributeEvent {
     @SubscribeEvent
     public static void onEntityAttributeModificationEvent(EntityAttributeModificationEvent event) {
 
-        System.out.println("hello");
+        System.out.println("Initializing Ward");
         event.add(EntityType.PLAYER, manatick.WARD);
         event.add(EntityType.PLAYER, manatick.BASEWARD);
         for(EntityType entityType: event.getTypes()) {
